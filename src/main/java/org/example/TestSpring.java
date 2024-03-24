@@ -8,10 +8,12 @@ public class TestSpring {
                 "applicationContext.xml"
         );
 
-        Music musicBean = contest.getBean("musicBean", Music.class);
 
-        MusicPlayer musicPlayer = new MusicPlayer(musicBean);
-        musicPlayer.playMusic();
+        MusicPlayer musicPlayer = contest.getBean("musicPlayerBean", MusicPlayer.class);
+        musicPlayer.playMusicList();
+        System.out.println(musicPlayer.getName());
+        System.out.println(musicPlayer.getVolume());
+
         contest.close();
     }
 }
